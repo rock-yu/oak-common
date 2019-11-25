@@ -3,7 +3,7 @@ plugins {
     id 'maven'
 }
 
-group 'com.oakware'
+group 'com.github.rock-yu'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -23,11 +23,12 @@ artifacts {
 
 dependencies {
     compile "com.fasterxml.jackson.core:jackson-databind:2.6.2"
+    compile "org.springframework:spring-jdbc:5.1.5.RELEASE"
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-}
-
-wrapper {
-    gradleVersion = "5.1.1"
-    distributionType = Wrapper.DistributionType.ALL
+    testCompile "org.mockito:mockito-core:3.1.0"
+    testCompile "junit:junit:4.12"
+    testCompile "org.springframework:spring-test:5.1.5.RELEASE"
+    testCompile "org.springframework:spring-context:5.1.5.RELEASE"
+    testCompile "org.hsqldb:hsqldb:2.2.9"
+    testCompile "org.dbunit:dbunit:2.5.0"
 }

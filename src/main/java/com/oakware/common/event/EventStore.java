@@ -8,6 +8,8 @@ public interface EventStore {
 
     List<StoredEvent> allStoredEventsSince(long aStoredEventId);
 
+    List<StoredEvent> findRecent(int maxCount);
+
     StoredEvent append(DomainEvent aDomainEvent);
 
     long countStoredEvents();
